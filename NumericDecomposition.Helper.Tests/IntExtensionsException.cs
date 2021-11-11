@@ -27,5 +27,25 @@ namespace NumericDecomposition.Helper.Tests
 
             CollectionAssert.AreEqual(correctDivisors, primeDivisors);
         }
+
+        [TestMethod]
+        public void GetDivisors_Should_Return_A_Empty_List_When_Extended_Number_Is_Zero()
+        {
+            var number = 0;
+
+            var divisors = number.GetDivisors();
+
+            Assert.AreEqual(0, divisors.Count);
+        }
+
+        [TestMethod]
+        public void GetPrimeDivisors_Should_Return_A_Empty_List_When_Extended_Number_Is_Zero()
+        {
+            var number = 0;
+
+            var primeDivisors = number.GetPrimeDivisors();
+
+            Assert.AreEqual(0, primeDivisors.Count);
+        }
     }
 }
