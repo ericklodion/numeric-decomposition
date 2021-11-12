@@ -24,8 +24,8 @@ namespace NumericDecomposition.ConsoleApp
 
             var decomposition = new Decomposition(number);
 
-            if (decomposition.has_error)
-                Console.WriteLine($"Ocorreu um erro ao decompor o número {number}");
+            if (decomposition.has_invalid_number)
+                Console.WriteLine($"{number} é um número informado para decomposição.");
             else
             {
                 Console.WriteLine($"Numero de entrada: {number}");

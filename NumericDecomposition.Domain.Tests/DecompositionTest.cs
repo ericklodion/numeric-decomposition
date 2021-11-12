@@ -16,7 +16,7 @@ namespace NumericDecomposition.Domain.Tests
             var decomposition = new Decomposition(number);
 
             //Assert
-            Assert.IsFalse(decomposition.has_error);
+            Assert.IsFalse(decomposition.has_invalid_number);
         }
 
         [DataTestMethod]
@@ -28,7 +28,7 @@ namespace NumericDecomposition.Domain.Tests
             var decomposition = new Decomposition(number);
 
             //Assert
-            Assert.IsTrue(decomposition.has_error);
+            Assert.IsTrue(decomposition.has_invalid_number);
         }
     }
 }
