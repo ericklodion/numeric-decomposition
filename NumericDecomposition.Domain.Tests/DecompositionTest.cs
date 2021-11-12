@@ -7,7 +7,7 @@ namespace NumericDecomposition.Domain.Tests
     public class DecompositionTest
     {
         [TestMethod]
-        public void Decomposition_Should_Not_Trigger_Exception_When_Receives_A_Valid_Number()
+        public void Decomposition_Should_Has_Prop_Invalid_Number_False_When_Receives_A_Valid_Number()
         {
             //Arrange
             var number = 45;
@@ -22,7 +22,7 @@ namespace NumericDecomposition.Domain.Tests
         [DataTestMethod]
         [DataRow(0)]
         [DataRow(-1)]
-        public void Decomposition_Should_Trigger_Exception_When_Receives_A_Invalid_Number(int number)
+        public void Decomposition_Should_Has_Prop_Invalid_Number_True_When_Receives_A_Invalid_Number(int number)
         {
             //Act
             var decomposition = new Decomposition(number);
