@@ -10,15 +10,19 @@ namespace NumericDecomposition.Domain
         public int number { get; private set; }
         public List<int> divisors { get; private set; }
         public List<int> prime_divisors { get; private set; }
+        public bool has_error { get; set; }
 
         public Decomposition(int number)
         {
             if (number < 1)
-                throw new ArgumentException("Número informado menor que um");
-
-            this.number = number;
-            this.divisors = number.GetDivisors();
-            this.prime_divisors = number.GetPrimeDivisors();
+                this.has_error = true;
+            else
+            {
+                this.has_error = false;
+                this.number = number;
+                this.divisors = number.GetDivisors();
+                this.prime_divisors = number.GetPrimeDivisors();
+            }
         }
     }
 }

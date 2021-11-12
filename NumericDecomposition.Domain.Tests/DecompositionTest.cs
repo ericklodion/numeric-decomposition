@@ -9,16 +9,26 @@ namespace NumericDecomposition.Domain.Tests
         [TestMethod]
         public void Decomposition_Should_Not_Trigger_Exception_When_Receives_A_Valid_Number()
         {
-            new Decomposition(45);
+            //Arrange
+            var number = 45;
+
+            //Act
+            var decomposition = new Decomposition(number);
+
+            //Assert
+            Assert.IsFalse(decomposition.has_error);
         }
 
         [DataTestMethod]
         [DataRow(0)]
         [DataRow(-1)]
-        [ExpectedException(typeof(ArgumentException))]
         public void Decomposition_Should_Trigger_Exception_When_Receives_A_Invalid_Number(int number)
         {
-            new Decomposition(number);
+            //Act
+            var decomposition = new Decomposition(number);
+
+            //Assert
+            Assert.IsTrue(decomposition.has_error);
         }
     }
 }
